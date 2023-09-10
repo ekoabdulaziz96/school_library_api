@@ -1,0 +1,29 @@
+Anyone (include anonymous)
+- list book
+
+Student:
+- list book
+- list student borrow (current borrow) --> support filter book title, author, uuid
+- list student borrow history (all of record) --> support filter book title, author, uuid
+
+Librarian:
+- manage book (django admin CMS) --> need to assign as `staff` then add permission to manage book
+- list book
+- list student
+- list student borrow (current borrow) --> support filter book title, author, uuid
+- list student borrow history (all of record) --> support filter book title, author, uuid
+- student borrow book (support bulking data)
+- student return book (support bulking data)
+- student extend borrow book (support bulking data)
+
+Superadmin:
+- manage user (django admin CMS)
+- manage book (django admin CMS)
+- list book
+- list student
+- list librarian
+- list student borrow (current borrow) --> support filter book title, author, uuid
+- list student borrow history (all of record) --> support filter book title, author, uuid
+- student borrow book (support bulking data)
+- student return book (support bulking data)
+- student extend borrow book (support bulking data)

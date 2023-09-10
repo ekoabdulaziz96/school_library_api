@@ -1,0 +1,3297 @@
+{
+	"info": {
+		"_postman_id": "1993979c-6116-4874-9c7c-b9e0c33a3b52",
+		"name": "School API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9807530",
+		"_collection_link": "https://restless-eclipse-114772.postman.co/workspace/INFINET_QAZWA~e3eefdbe-289a-479d-ae6b-7604804a8cb6/collection/9807530-1993979c-6116-4874-9c7c-b9e0c33a3b52?action=share&source=collection_link&creator=9807530"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Auth Token",
+					"item": [
+						{
+							"name": "Create-login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Your test name\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    console.log(jsonData.access)\r",
+											"\r",
+											"    pm.environment.set(\"access_token\", jsonData.access);\r",
+											"    pm.environment.set(\"refresh_token\", jsonData.refresh);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"superuser\",\r\n    \"password\": \"superuser\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/auth/jwt/create/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"jwt",
+										"create",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create-login",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"superuser\",\r\n    \"password\": \"superuser\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/auth/jwt/create/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"jwt",
+												"create",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sun, 10 Sep 2023 18:50:21 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.9.17"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept, Accept-Language, Cookie, origin"
+										},
+										{
+											"key": "Allow",
+											"value": "POST, OPTIONS"
+										},
+										{
+											"key": "djdt-store-id",
+											"value": "b45efb4938884d11b8872d596e7b1e72"
+										},
+										{
+											"key": "Server-Timing",
+											"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=219.89039999999704;desc=\"Elapsed time\", SQLPanel_sql_time;dur=11.827900000000113;desc=\"SQL 1 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "483"
+										},
+										{
+											"key": "Content-Language",
+											"value": "en"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5NDk3NjYyMSwiaWF0IjoxNjk0MzcxODIxLCJqdGkiOiIzNDBlMWMwNjcyNjU0YjIwYmRlNTJkNWQxYWU1OTZmMCIsInVzZXJfaWQiOjF9.GeUQzlUbjWqsiRFTOO8dGg0-3tFYcGbtOPBhY83z7tQ\",\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk0Mzc1NDIxLCJpYXQiOjE2OTQzNzE4MjEsImp0aSI6IjA1MzUwOTUzZDY4MjQ5NjZhZTAwYzBkOTE3YWRiNzk2IiwidXNlcl9pZCI6MX0.Q8gQkCErwTUkGtQx6kaWcH2oJCZyoiGphvzhD6dRx_c\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Create-login librarian",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Your test name\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    console.log(jsonData.access)\r",
+											"\r",
+											"    pm.environment.set(\"access_token_librarian\", jsonData.access);\r",
+											"    pm.environment.set(\"refresh_token_librarian\", jsonData.refresh);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"user_librarian\",\r\n    \"password\": \"rewardz123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/auth/jwt/create/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"jwt",
+										"create",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create-login librarian",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"user_librarian\",\r\n    \"password\": \"rewardz123\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/auth/jwt/create/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"jwt",
+												"create",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 09 Sep 2023 10:18:45 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.9.17"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept, Accept-Language, Cookie, origin"
+										},
+										{
+											"key": "Allow",
+											"value": "POST, OPTIONS"
+										},
+										{
+											"key": "djdt-store-id",
+											"value": "5ed418929ddb443caffb863e72b8b820"
+										},
+										{
+											"key": "Server-Timing",
+											"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=385.6687999999906;desc=\"Elapsed time\", SQLPanel_sql_time;dur=13.610199999988026;desc=\"SQL 1 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "483"
+										},
+										{
+											"key": "Content-Language",
+											"value": "en"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5NDM0MTEyNSwiaWF0IjoxNjk0MjU0NzI1LCJqdGkiOiIyMTJlYWNkNjlhNjY0ZDU4ODU4NTdiYTRhYmVkNmFkMCIsInVzZXJfaWQiOjR9.Y1b2h-NRH4fh-wwuLP8uveX-d_Z7hq2jRzlE_ooTZFA\",\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk0MjU1MDI1LCJpYXQiOjE2OTQyNTQ3MjUsImp0aSI6IjM3ZDA4NzE3MjA3MzQ0OTE4NWJlYjk1OTcyYmE0Y2Y2IiwidXNlcl9pZCI6NH0.GTmbvmThEGDN6ICpClvq0du6GNTMFAJEwQ_GFynl0ZY\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Create-login student",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Your test name\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    console.log(jsonData.access)\r",
+											"\r",
+											"    pm.environment.set(\"access_token_student\", jsonData.access);\r",
+											"    pm.environment.set(\"refresh_token_student\", jsonData.refresh);\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"user_student\",\r\n    \"password\": \"rewardz123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/auth/jwt/create/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"jwt",
+										"create",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create-login librarian Copy",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"username\": \"user_student\",\r\n    \"password\": \"rewardz123\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/auth/jwt/create/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"jwt",
+												"create",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sat, 09 Sep 2023 10:28:04 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.9.17"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept, Accept-Language, Cookie, origin"
+										},
+										{
+											"key": "Allow",
+											"value": "POST, OPTIONS"
+										},
+										{
+											"key": "djdt-store-id",
+											"value": "77bdfbce77b24808b74ea8412313cf33"
+										},
+										{
+											"key": "Server-Timing",
+											"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=231.81020000004082;desc=\"Elapsed time\", SQLPanel_sql_time;dur=10.47470000003159;desc=\"SQL 1 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "483"
+										},
+										{
+											"key": "Content-Language",
+											"value": "en"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY5NDM0MTY4NCwiaWF0IjoxNjk0MjU1Mjg0LCJqdGkiOiIxMjlkNjU1ZmMzZWU0MzY5YjZmNWY1NGUyZmE0ODg0ZiIsInVzZXJfaWQiOjV9.HjBqx5mpblmh-wHdFToxfCHJZ-ZZv_GXxKKRYAyjEWs\",\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk0MjU1NTg0LCJpYXQiOjE2OTQyNTUyODQsImp0aSI6IjliYjhlM2IyZThlNjRiMzRiZGNhZjliNzNiZDlkYWVkIiwidXNlcl9pZCI6NX0.lXjgzO35KevUApY5LD36XXl4zAlHhsGhF06LQXa4Ick\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Refresh",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"refresh\": \"{{refresh_token}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/auth/jwt/refresh/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"jwt",
+										"refresh",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Refresh",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n   \"refresh\": \"{{refresh_token}}\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/auth/jwt/refresh/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"jwt",
+												"refresh",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sun, 10 Sep 2023 18:50:27 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.9.17"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept, Accept-Language, Cookie, origin"
+										},
+										{
+											"key": "Allow",
+											"value": "POST, OPTIONS"
+										},
+										{
+											"key": "djdt-store-id",
+											"value": "0541824de52a4385813deb6f3e682083"
+										},
+										{
+											"key": "Server-Timing",
+											"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=127.0276999999993;desc=\"Elapsed time\", SQLPanel_sql_time;dur=0;desc=\"SQL 0 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "241"
+										},
+										{
+											"key": "Content-Language",
+											"value": "en"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjk0Mzc1NDI3LCJpYXQiOjE2OTQzNzE4MjEsImp0aSI6IjEwYjFlOTNkM2QxNzQ4OGQ5YzFjZGVmOTEwNTJhMjQzIiwidXNlcl9pZCI6MX0.qoIGnV3JlIi0Wpp_ZaYBQ6fOBGXJ9Nx65wdj5bY6HGw\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Verify",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"token\": \"{{access_token}}\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/auth/jwt/verify/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"jwt",
+										"verify",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Verify",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n   \"token\": \"{{access_token}}\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/auth/jwt/verify/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"jwt",
+												"verify",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Sun, 10 Sep 2023 18:50:32 GMT"
+										},
+										{
+											"key": "Server",
+											"value": "WSGIServer/0.2 CPython/3.9.17"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Vary",
+											"value": "Accept, Accept-Language, Cookie, origin"
+										},
+										{
+											"key": "Allow",
+											"value": "POST, OPTIONS"
+										},
+										{
+											"key": "djdt-store-id",
+											"value": "bb5fa5d086404c6e83716aba3fdb1c9f"
+										},
+										{
+											"key": "Server-Timing",
+											"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=136.19690000000162;desc=\"Elapsed time\", SQLPanel_sql_time;dur=0;desc=\"SQL 0 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2"
+										},
+										{
+											"key": "Content-Language",
+											"value": "en"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "Referrer-Policy",
+											"value": "same-origin"
+										},
+										{
+											"key": "Cross-Origin-Opener-Policy",
+											"value": "same-origin"
+										}
+									],
+									"cookie": [],
+									"body": "{}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Regist user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"hq user\",\r\n    \"username\": \"user_librarian_hq\",\r\n    \"role\": \"librarian\",\r\n    \"password\": \"rewardz123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/users/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Regist user librarian",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"test user librarian\",\r\n    \"username\": \"user_librarian\",\r\n    \"role\": \"librarian\",\r\n    \"password\": \"rewardz123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/auth/users/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"users",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Sep 2023 10:16:32 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.17"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Accept-Language, Cookie, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "djdt-store-id",
+									"value": "24a1d3fdfa084c7eb18a37f60a7c4122"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=240.9542999999985;desc=\"Elapsed time\", SQLPanel_sql_time;dur=8.322499999998456;desc=\"SQL 1 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "94"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"test user librarian\",\n    \"username\": \"user_librarian\",\n    \"role\": \"librarian\",\n    \"is_active\": true\n}"
+						},
+						{
+							"name": "Regist user student",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"test user student\",\r\n    \"username\": \"user_student\",\r\n    \"role\": \"student\",\r\n    \"password\": \"rewardz123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/auth/users/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"users",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Sep 2023 10:17:20 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.17"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Accept-Language, Cookie, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "djdt-store-id",
+									"value": "0a7e0168db054a2789ed0e2583fff77d"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=252.96900000000733;desc=\"Elapsed time\", SQLPanel_sql_time;dur=7.785900000001789;desc=\"SQL 1 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "88"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"test user student\",\n    \"username\": \"user_student\",\n    \"role\": \"student\",\n    \"is_active\": true\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Users me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token_librarian}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/users/me",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Users me librarian",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/users/me",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 09 Sep 2023 10:40:45 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.17"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Accept-Language, Cookie, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+								},
+								{
+									"key": "djdt-store-id",
+									"value": "fac7b835603141bb9bc78a0af83ba8d7"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=138.5342000000005;desc=\"Elapsed time\", SQLPanel_sql_time;dur=12.168799999999536;desc=\"SQL 1 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "94"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"username\": \"user_librarian\",\n    \"name\": \"test user librarian\",\n    \"role\": \"librarian\",\n    \"is_active\": true\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "General",
+			"item": [
+				{
+					"name": "list-book",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/library/books/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"library",
+								"books",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list-book",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/library/books/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"library",
+										"books",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Sep 2023 09:47:18 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.17"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Accept-Language, Cookie, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "djdt-store-id",
+									"value": "8756004c28e549b4aaa4d4eb72298636"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=162.47800000000012;desc=\"Elapsed time\", SQLPanel_sql_time;dur=15.928399999999954;desc=\"SQL 2 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1567"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 12,\n    \"next\": \"http://localhost:8000/api/library/books/?page=2\",\n    \"previous\": null,\n    \"results\": [\n        {\n            \"uuid\": \"83661ced-6512-426b-96ee-f5c852fe2630\",\n            \"title\": \"Advance in Bahasa\",\n            \"author\": \"Uncle Joko\",\n            \"quantity\": 15,\n            \"nearest_return_date\": null\n        },\n        {\n            \"uuid\": \"f3252e4f-c7dd-4a41-b755-4adcb1efd50f\",\n            \"title\": \"Advance in Mathematics\",\n            \"author\": \"Uncle John Doe\",\n            \"quantity\": 15,\n            \"nearest_return_date\": null\n        },\n        {\n            \"uuid\": \"2e85a905-ef72-4034-8b67-dafe13c982c6\",\n            \"title\": \"Advance in Science\",\n            \"author\": \"Uncle John\",\n            \"quantity\": 12,\n            \"nearest_return_date\": null\n        },\n        {\n            \"uuid\": \"6fb1bb4d-e174-4c1b-8814-0d94ab7c2075\",\n            \"title\": \"Advanve in English\",\n            \"author\": \"Uncle Jack\",\n            \"quantity\": 15,\n            \"nearest_return_date\": null\n        },\n        {\n            \"uuid\": \"ecfc5514-7d60-45aa-993e-3f6cdc2940f2\",\n            \"title\": \"Biology for beginner\",\n            \"author\": \"Uncle Sato\",\n            \"quantity\": 15,\n            \"nearest_return_date\": null\n        },\n        {\n            \"uuid\": \"81e718bc-6695-4542-9a60-87122a023809\",\n            \"title\": \"Learning Bahasa for beginner\",\n            \"author\": \"Uncle Doe\",\n            \"quantity\": 15,\n            \"nearest_return_date\": null\n        },\n        {\n            \"uuid\": \"61adc251-39bc-455b-b212-8643f38018dd\",\n            \"title\": \"Learning Computer for beginner\",\n            \"author\": \"Uncle Bob\",\n            \"quantity\": 8,\n            \"nearest_return_date\": null\n        },\n        {\n            \"uuid\": \"50a08f96-89f9-407b-84f9-556ace772c42\",\n            \"title\": \"Learning English for beginner\",\n            \"author\": \"Uncle Mutu\",\n            \"quantity\": 17,\n            \"nearest_return_date\": null\n        },\n        {\n            \"uuid\": \"77a6f024-4e09-4845-b802-39cffe980f8f\",\n            \"title\": \"Learning Mathematics with fast formula\",\n            \"author\": \"Uncle Wid\",\n            \"quantity\": 16,\n            \"nearest_return_date\": null\n        },\n        {\n            \"uuid\": \"dddabc42-d1f6-4bb2-afd5-d79891a744e0\",\n            \"title\": \"Mathematics for beginner\",\n            \"author\": \"Robert C. Martin\",\n            \"quantity\": 20,\n            \"nearest_return_date\": null\n        }\n    ]\n}"
+						},
+						{
+							"name": "with filter",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/library/books/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"library",
+										"books",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Sep 2023 09:47:11 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.17"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Accept-Language, Cookie, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "djdt-store-id",
+									"value": "8f78b707020a4cae823450692c198e28"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=175.18289999999936;desc=\"Elapsed time\", SQLPanel_sql_time;dur=15.982899999997358;desc=\"SQL 2 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "510"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 3,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"uuid\": \"f3252e4f-c7dd-4a41-b755-4adcb1efd50f\",\n            \"title\": \"Advance in Mathematics\",\n            \"author\": \"Uncle John Doe\",\n            \"quantity\": 15,\n            \"nearest_return_date\": null\n        },\n        {\n            \"uuid\": \"77a6f024-4e09-4845-b802-39cffe980f8f\",\n            \"title\": \"Learning Mathematics with fast formula\",\n            \"author\": \"Uncle Wid\",\n            \"quantity\": 16,\n            \"nearest_return_date\": null\n        },\n        {\n            \"uuid\": \"dddabc42-d1f6-4bb2-afd5-d79891a744e0\",\n            \"title\": \"Mathematics for beginner\",\n            \"author\": \"Robert C. Martin\",\n            \"quantity\": 20,\n            \"nearest_return_date\": null\n        }\n    ]\n}"
+						},
+						{
+							"name": "with filter uuid",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/library/books/?q=f3252e4f-c7dd-4a41-b755-4adcb1efd50f",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"library",
+										"books",
+										""
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "f3252e4f-c7dd-4a41-b755-4adcb1efd50f"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Sep 2023 09:47:57 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.17"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Accept-Language, Cookie, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "djdt-store-id",
+									"value": "51424a2661cf426f8d9aea7598b67558"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=468.05319999999995;desc=\"Elapsed time\", SQLPanel_sql_time;dur=31.408700000000067;desc=\"SQL 2 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "199"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"uuid\": \"f3252e4f-c7dd-4a41-b755-4adcb1efd50f\",\n            \"title\": \"Advance in Mathematics\",\n            \"author\": \"Uncle John Doe\",\n            \"quantity\": 15,\n            \"nearest_return_date\": null\n        }\n    ]\n}"
+						},
+						{
+							"name": "with nearest",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/library/books/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"library",
+										"books",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Sep 2023 18:33:20 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.17"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Accept-Language, Cookie, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "djdt-store-id",
+									"value": "a739ffca49d14518a7dc11343dc506ba"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=184.95349999997757;desc=\"Elapsed time\", SQLPanel_sql_time;dur=15.446699999984048;desc=\"SQL 2 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1574"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 12,\n    \"next\": \"http://localhost:8000/api/library/books/?page=2\",\n    \"previous\": null,\n    \"results\": [\n        {\n            \"uuid\": \"83661ced-6512-426b-96ee-f5c852fe2630\",\n            \"title\": \"Advance in Bahasa\",\n            \"author\": \"Uncle Joko\",\n            \"quantity\": 0,\n            \"nearest_return_date\": \"2023-10-11\"\n        },\n        {\n            \"uuid\": \"f3252e4f-c7dd-4a41-b755-4adcb1efd50f\",\n            \"title\": \"Advance in Mathematics\",\n            \"author\": \"Uncle John Doe\",\n            \"quantity\": 11,\n            \"nearest_return_date\": null\n        },\n        {\n            \"uuid\": \"2e85a905-ef72-4034-8b67-dafe13c982c6\",\n            \"title\": \"Advance in Science\",\n            \"author\": \"Uncle John\",\n            \"quantity\": 12,\n            \"nearest_return_date\": null\n        },\n        {\n            \"uuid\": \"6fb1bb4d-e174-4c1b-8814-0d94ab7c2075\",\n            \"title\": \"Advanve in English\",\n            \"author\": \"Uncle Jack\",\n            \"quantity\": 15,\n            \"nearest_return_date\": null\n        },\n        {\n            \"uuid\": \"ecfc5514-7d60-45aa-993e-3f6cdc2940f2\",\n            \"title\": \"Biology for beginner\",\n            \"author\": \"Uncle Sato\",\n            \"quantity\": 15,\n            \"nearest_return_date\": null\n        },\n        {\n            \"uuid\": \"81e718bc-6695-4542-9a60-87122a023809\",\n            \"title\": \"Learning Bahasa for beginner\",\n            \"author\": \"Uncle Doe\",\n            \"quantity\": 15,\n            \"nearest_return_date\": null\n        },\n        {\n            \"uuid\": \"61adc251-39bc-455b-b212-8643f38018dd\",\n            \"title\": \"Learning Computer for beginner\",\n            \"author\": \"Uncle Bob\",\n            \"quantity\": 8,\n            \"nearest_return_date\": null\n        },\n        {\n            \"uuid\": \"50a08f96-89f9-407b-84f9-556ace772c42\",\n            \"title\": \"Learning English for beginner\",\n            \"author\": \"Uncle Mutu\",\n            \"quantity\": 17,\n            \"nearest_return_date\": null\n        },\n        {\n            \"uuid\": \"77a6f024-4e09-4845-b802-39cffe980f8f\",\n            \"title\": \"Learning Mathematics with fast formula\",\n            \"author\": \"Uncle Wid\",\n            \"quantity\": 16,\n            \"nearest_return_date\": null\n        },\n        {\n            \"uuid\": \"dddabc42-d1f6-4bb2-afd5-d79891a744e0\",\n            \"title\": \"Mathematics for beginner\",\n            \"author\": \"Robert C. Martin\",\n            \"quantity\": 20,\n            \"nearest_return_date\": null\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Student",
+			"item": [
+				{
+					"name": "list-borrow-me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token_student}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/library/borrow/me/?q=a9a7f65e-fae1-4de6-a1c1-f30f55272890",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"library",
+								"borrow",
+								"me",
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "a9a7f65e-fae1-4de6-a1c1-f30f55272890"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/library/borrow/me/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"library",
+										"borrow",
+										"me",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Sep 2023 18:29:16 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.17"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Accept-Language, Cookie, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "djdt-store-id",
+									"value": "abb59e09f21b4cbdb20f1de0281f70b7"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=615.333899999996;desc=\"Elapsed time\", SQLPanel_sql_time;dur=38.6016000000069;desc=\"SQL 3 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "299"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"book\": {\n                \"uuid\": \"a9a7f65e-fae1-4de6-a1c1-f30f55272890\",\n                \"title\": \"Advance in Matematics\",\n                \"author\": \"Uncle John Doe\",\n                \"quantity\": 15,\n                \"nearest_return_date\": null\n            },\n            \"is_borrowed\": true,\n            \"count_extend\": 0,\n            \"borrowed_at\": \"2023-09-10\",\n            \"deadline_date\": \"2023-09-10\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "with filter",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/library/borrow/me/?q=a9a7f65e-fae1-4de6-a1c1-f30f55272890",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"library",
+										"borrow",
+										"me",
+										""
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "a9a7f65e-fae1-4de6-a1c1-f30f55272890"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Sep 2023 18:45:09 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.17"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Accept-Language, Cookie, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "djdt-store-id",
+									"value": "009d42e54b8d43ca848cccd22e451279"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=197.7830000000722;desc=\"Elapsed time\", SQLPanel_sql_time;dur=37.517200000024786;desc=\"SQL 3 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "299"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"book\": {\n                \"uuid\": \"a9a7f65e-fae1-4de6-a1c1-f30f55272890\",\n                \"title\": \"Advance in Matematics\",\n                \"author\": \"Uncle John Doe\",\n                \"quantity\": 15,\n                \"nearest_return_date\": null\n            },\n            \"is_borrowed\": true,\n            \"count_extend\": 0,\n            \"borrowed_at\": \"2023-09-10\",\n            \"deadline_date\": \"2023-09-10\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "list-borrow-me-history",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token_student}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/library/borrow/me/history/?q=f3252e4f-c7dd-4a41-b755-4adcb1efd50f",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"library",
+								"borrow",
+								"me",
+								"history",
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "f3252e4f-c7dd-4a41-b755-4adcb1efd50f"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/library/borrow/me/history/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"library",
+										"borrow",
+										"me",
+										"history",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Sep 2023 18:47:34 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.17"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Accept-Language, Cookie, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "djdt-store-id",
+									"value": "cdf5fe5f436e4184a60bc6b6a02715c2"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=214.40879999999396;desc=\"Elapsed time\", SQLPanel_sql_time;dur=41.6707000000045;desc=\"SQL 3 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "788"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 3,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"book\": {\n                \"uuid\": \"a9a7f65e-fae1-4de6-a1c1-f30f55272890\",\n                \"title\": \"Advance in Matematics\",\n                \"author\": \"Uncle John Doe\",\n                \"quantity\": 15,\n                \"nearest_return_date\": null\n            },\n            \"is_borrowed\": true,\n            \"count_extend\": 0,\n            \"borrowed_at\": \"2023-09-10\",\n            \"deadline_date\": \"2023-09-10\"\n        },\n        {\n            \"book\": {\n                \"uuid\": \"f3252e4f-c7dd-4a41-b755-4adcb1efd50f\",\n                \"title\": \"Advance in Mathematics\",\n                \"author\": \"Uncle John Doe\",\n                \"quantity\": 11,\n                \"nearest_return_date\": null\n            },\n            \"is_borrowed\": false,\n            \"count_extend\": 2,\n            \"borrowed_at\": \"2023-09-10\",\n            \"deadline_date\": null\n        },\n        {\n            \"book\": {\n                \"uuid\": \"83661ced-6512-426b-96ee-f5c852fe2630\",\n                \"title\": \"Advance in Bahasa\",\n                \"author\": \"Uncle Joko\",\n                \"quantity\": 0,\n                \"nearest_return_date\": \"2023-10-11\"\n            },\n            \"is_borrowed\": true,\n            \"count_extend\": 0,\n            \"borrowed_at\": \"2023-09-10\",\n            \"deadline_date\": \"2023-10-11\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "with filter",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/library/borrow/me/history/?q=f3252e4f-c7dd-4a41-b755-4adcb1efd50f",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"library",
+										"borrow",
+										"me",
+										"history",
+										""
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "f3252e4f-c7dd-4a41-b755-4adcb1efd50f"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Sep 2023 18:47:54 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.17"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Accept-Language, Cookie, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "djdt-store-id",
+									"value": "99e92ef9dba6464bb443397dbc5f8102"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=225.89859999999362;desc=\"Elapsed time\", SQLPanel_sql_time;dur=41.87610000002451;desc=\"SQL 3 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "293"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"book\": {\n                \"uuid\": \"f3252e4f-c7dd-4a41-b755-4adcb1efd50f\",\n                \"title\": \"Advance in Mathematics\",\n                \"author\": \"Uncle John Doe\",\n                \"quantity\": 11,\n                \"nearest_return_date\": null\n            },\n            \"is_borrowed\": false,\n            \"count_extend\": 2,\n            \"borrowed_at\": \"2023-09-10\",\n            \"deadline_date\": null\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Librarian",
+			"item": [
+				{
+					"name": "list-student",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token_librarian}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/user/students/?q=eko",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"students",
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "eko"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list-student",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/user/students/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"students",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Sep 2023 07:28:58 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.17"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Accept-Language, Cookie, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "djdt-store-id",
+									"value": "114c31399c66467d96da7e0b98ff07fa"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=193.22580000005019;desc=\"Elapsed time\", SQLPanel_sql_time;dur=19.704200000205674;desc=\"SQL 3 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "359"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 4,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"username\": \"user_student\",\n            \"name\": \"test user student\",\n            \"role\": \"student\",\n            \"is_active\": true\n        },\n        {\n            \"username\": \"user_eko\",\n            \"name\": \"eko\",\n            \"role\": \"student\",\n            \"is_active\": true\n        },\n        {\n            \"username\": \"user_abdul\",\n            \"name\": \"abdul\",\n            \"role\": \"student\",\n            \"is_active\": true\n        },\n        {\n            \"username\": \"user_aziz\",\n            \"name\": \"aziz\",\n            \"role\": \"student\",\n            \"is_active\": true\n        }\n    ]\n}"
+						},
+						{
+							"name": "list-book with filter",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/user/students/?q=eko",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"students",
+										""
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "eko"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Sep 2023 07:33:07 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.17"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Accept-Language, Cookie, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "djdt-store-id",
+									"value": "ea4eb0cb009b4ebc8b86312c287cb0af"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=187.10950000000182;desc=\"Elapsed time\", SQLPanel_sql_time;dur=19.39239999999387;desc=\"SQL 3 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "122"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"username\": \"user_eko\",\n            \"name\": \"eko\",\n            \"role\": \"student\",\n            \"is_active\": true\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "list-student-borrow",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token_librarian}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/library/student-borrow/user_student/?q=a9a7f65e-fae1-4de6-a1c1-f30f55272890",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"library",
+								"student-borrow",
+								"user_student",
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "a9a7f65e-fae1-4de6-a1c1-f30f55272890"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/library/student-borrow/user_student/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"library",
+										"student-borrow",
+										"user_student",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Sep 2023 18:06:25 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.17"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Accept-Language, Cookie, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "djdt-store-id",
+									"value": "4ace4b534e9740a192450e73eeff8751"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=215.75219999999717;desc=\"Elapsed time\", SQLPanel_sql_time;dur=38.35759999998345;desc=\"SQL 4 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "299"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"book\": {\n                \"uuid\": \"a9a7f65e-fae1-4de6-a1c1-f30f55272890\",\n                \"title\": \"Advance in Matematics\",\n                \"author\": \"Uncle John Doe\",\n                \"quantity\": 15,\n                \"nearest_return_date\": null\n            },\n            \"is_borrowed\": true,\n            \"count_extend\": 0,\n            \"borrowed_at\": \"2023-09-10\",\n            \"deadline_date\": \"2023-09-10\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "with filter",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/library/student-borrow/user_student/?q=a9a7f65e-fae1-4de6-a1c1-f30f55272890",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"library",
+										"student-borrow",
+										"user_student",
+										""
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "a9a7f65e-fae1-4de6-a1c1-f30f55272890"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Sep 2023 18:48:42 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.17"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Accept-Language, Cookie, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "djdt-store-id",
+									"value": "824094d2537b4b62b045fe93a674a7aa"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=232.67579999999555;desc=\"Elapsed time\", SQLPanel_sql_time;dur=45.21710000001633;desc=\"SQL 4 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "299"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"book\": {\n                \"uuid\": \"a9a7f65e-fae1-4de6-a1c1-f30f55272890\",\n                \"title\": \"Advance in Matematics\",\n                \"author\": \"Uncle John Doe\",\n                \"quantity\": 15,\n                \"nearest_return_date\": null\n            },\n            \"is_borrowed\": true,\n            \"count_extend\": 0,\n            \"borrowed_at\": \"2023-09-10\",\n            \"deadline_date\": \"2023-09-10\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "list-student-borrow-history",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token_librarian}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/library/student-borrow/user_student/history/?q=f3252e4f-c7dd-4a41-b755-4adcb1efd50f",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"library",
+								"student-borrow",
+								"user_student",
+								"history",
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "f3252e4f-c7dd-4a41-b755-4adcb1efd50f"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/library/student-borrow/user_student/history",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"library",
+										"student-borrow",
+										"user_student",
+										"history"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Sep 2023 18:49:04 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.17"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Accept-Language, Cookie, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "djdt-store-id",
+									"value": "79e6bed85bd24b62b7126812eda1ad79"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=219.81969999998796;desc=\"Elapsed time\", SQLPanel_sql_time;dur=43.56100000001106;desc=\"SQL 4 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "788"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 3,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"book\": {\n                \"uuid\": \"a9a7f65e-fae1-4de6-a1c1-f30f55272890\",\n                \"title\": \"Advance in Matematics\",\n                \"author\": \"Uncle John Doe\",\n                \"quantity\": 15,\n                \"nearest_return_date\": null\n            },\n            \"is_borrowed\": true,\n            \"count_extend\": 0,\n            \"borrowed_at\": \"2023-09-10\",\n            \"deadline_date\": \"2023-09-10\"\n        },\n        {\n            \"book\": {\n                \"uuid\": \"f3252e4f-c7dd-4a41-b755-4adcb1efd50f\",\n                \"title\": \"Advance in Mathematics\",\n                \"author\": \"Uncle John Doe\",\n                \"quantity\": 11,\n                \"nearest_return_date\": null\n            },\n            \"is_borrowed\": false,\n            \"count_extend\": 2,\n            \"borrowed_at\": \"2023-09-10\",\n            \"deadline_date\": null\n        },\n        {\n            \"book\": {\n                \"uuid\": \"83661ced-6512-426b-96ee-f5c852fe2630\",\n                \"title\": \"Advance in Bahasa\",\n                \"author\": \"Uncle Joko\",\n                \"quantity\": 0,\n                \"nearest_return_date\": \"2023-10-11\"\n            },\n            \"is_borrowed\": true,\n            \"count_extend\": 0,\n            \"borrowed_at\": \"2023-09-10\",\n            \"deadline_date\": \"2023-10-11\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "with filter",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/library/student-borrow/user_student/history/?q=f3252e4f-c7dd-4a41-b755-4adcb1efd50f",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"library",
+										"student-borrow",
+										"user_student",
+										"history",
+										""
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "f3252e4f-c7dd-4a41-b755-4adcb1efd50f"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Sep 2023 18:49:32 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.17"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Accept-Language, Cookie, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "djdt-store-id",
+									"value": "5da7823ad83a404bb113aa26bddae971"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=573.8670999999997;desc=\"Elapsed time\", SQLPanel_sql_time;dur=44.62069999999984;desc=\"SQL 4 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "293"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"book\": {\n                \"uuid\": \"f3252e4f-c7dd-4a41-b755-4adcb1efd50f\",\n                \"title\": \"Advance in Mathematics\",\n                \"author\": \"Uncle John Doe\",\n                \"quantity\": 11,\n                \"nearest_return_date\": null\n            },\n            \"is_borrowed\": false,\n            \"count_extend\": 2,\n            \"borrowed_at\": \"2023-09-10\",\n            \"deadline_date\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "student-borrow",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token_librarian}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"book_uuids\": [\r\n        \"83661ced-6512-426b-96ee-f5c852fe2630\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/library/student-borrow/user_student/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"library",
+								"student-borrow",
+								"user_student",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "invalid",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/library/student-borrow/user_student/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"library",
+										"student-borrow",
+										"user_student",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Sep 2023 16:52:32 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.17"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Accept-Language, Cookie, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "djdt-store-id",
+									"value": "91677799518d457ebe07fb9ee6436200"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=154.70380000000006;desc=\"Elapsed time\", SQLPanel_sql_time;dur=13.470100000006369;desc=\"SQL 4 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"book_uuids\": [\n        \"This field is required.\"\n    ]\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"book_uuids\": [\r\n        \"f3252e4f-c7dd-4a41-b755-4adcb1efd50f\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/library/student-borrow/user_student/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"library",
+										"student-borrow",
+										"user_student",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Sep 2023 16:53:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.17"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Accept-Language, Cookie, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "djdt-store-id",
+									"value": "49de76d83ea9442195aef6106892cbbe"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=245.0441000000012;desc=\"Elapsed time\", SQLPanel_sql_time;dur=62.40169999999523;desc=\"SQL 8 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "51"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "\"Success add 1 borrowed book to test user student.\""
+						},
+						{
+							"name": "fail",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"book_uuids\": [\r\n        \"f3252e4f-c7dd-4a41-b755-4adcb1efd50f\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/library/student-borrow/user_student/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"library",
+										"student-borrow",
+										"user_student",
+										""
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Sep 2023 18:21:18 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.17"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Accept-Language, Cookie, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, POST, HEAD, OPTIONS"
+								},
+								{
+									"key": "djdt-store-id",
+									"value": "85ff21538aa140c2834917f6114bba09"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=950.637699999998;desc=\"Elapsed time\", SQLPanel_sql_time;dur=53.77999999999972;desc=\"SQL 8 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "86"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"book_uuids\": [\n        \"Choosen book have been borrowed. book title: Advance in Mathematics\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "student-borrow-extend",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token_librarian}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"book_uuids\": [\r\n        \"f3252e4f-c7dd-4a41-b755-4adcb1efd50f\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/library/student-borrow/user_student/extend",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"library",
+								"student-borrow",
+								"user_student",
+								"extend"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"book_uuids\": [\r\n        \"f3252e4f-c7dd-4a41-b755-4adcb1efd50f\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/library/student-borrow/user_student/extend",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"library",
+										"student-borrow",
+										"user_student",
+										"extend"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Sep 2023 17:57:51 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.17"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Accept-Language, Cookie, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "PUT, PATCH, OPTIONS"
+								},
+								{
+									"key": "djdt-store-id",
+									"value": "d01507c6b61241f9a0f891e06e1a13d8"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=219.2338000000973;desc=\"Elapsed time\", SQLPanel_sql_time;dur=45.43809999995574;desc=\"SQL 6 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "\"Success extend 1 borrowed book from test user student.\""
+						},
+						{
+							"name": "fail",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"book_uuids\": [\r\n        \"f3252e4f-c7dd-4a41-b755-4adcb1efd50f\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/library/student-borrow/user_student/extend",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"library",
+										"student-borrow",
+										"user_student",
+										"extend"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Sep 2023 17:58:07 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.17"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Accept-Language, Cookie, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "PUT, PATCH, OPTIONS"
+								},
+								{
+									"key": "djdt-store-id",
+									"value": "8d9d0c5370c246ae96f14c4ebe1b0c50"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=219.5805000000064;desc=\"Elapsed time\", SQLPanel_sql_time;dur=48.83719999997993;desc=\"SQL 6 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "85"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"book_uuids\": [\n        \"Choosen book can't be extended. book title: Advance in Mathematics\"\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "student-borrow-return",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token_librarian}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"book_uuids\": [\r\n        \"f3252e4f-c7dd-4a41-b755-4adcb1efd50f\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/library/student-borrow/user_student/return",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"library",
+								"student-borrow",
+								"user_student",
+								"return"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"book_uuids\": [\r\n        \"f3252e4f-c7dd-4a41-b755-4adcb1efd50f\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/library/student-borrow/user_student/return",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"library",
+										"student-borrow",
+										"user_student",
+										"return"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Sep 2023 17:59:59 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.17"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Accept-Language, Cookie, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "PUT, PATCH, OPTIONS"
+								},
+								{
+									"key": "djdt-store-id",
+									"value": "a9736925ad43449183ee85fc4f1b3094"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=237.67629999998974;desc=\"Elapsed time\", SQLPanel_sql_time;dur=48.04940000002489;desc=\"SQL 7 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "\"Success return 1 borrowed book from test user student.\""
+						},
+						{
+							"name": "fail",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"book_uuids\": [\r\n        \"f3252e4f-c7dd-4a41-b755-4adcb1efd50f\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/library/student-borrow/user_student/return",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"library",
+										"student-borrow",
+										"user_student",
+										"return"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Sep 2023 18:09:42 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.17"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Accept-Language, Cookie, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "PUT, PATCH, OPTIONS"
+								},
+								{
+									"key": "djdt-store-id",
+									"value": "7998e23699514929b29283c2a25a6306"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=562.0510000000003;desc=\"Elapsed time\", SQLPanel_sql_time;dur=44.68260000000068;desc=\"SQL 6 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "86"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"book_uuids\": [\n        \"Choosen book have been returned. book title: Advance in Mathematics\"\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Superuser",
+			"item": [
+				{
+					"name": "list-librarian",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/user/librarians/?q=eko",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"librarians",
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "eko"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list-librarian",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/user/librarians/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"librarians",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Sep 2023 07:36:03 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.17"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Accept-Language, Cookie, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "djdt-store-id",
+									"value": "a2b73b99388143d793884924e5e672db"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=176.19360000000484;desc=\"Elapsed time\", SQLPanel_sql_time;dur=19.838299999989317;desc=\"SQL 3 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "319"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 3,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"username\": \"user_librarian\",\n            \"name\": \"test user librarian\",\n            \"role\": \"librarian\",\n            \"is_active\": true\n        },\n        {\n            \"username\": \"user_librarian123\",\n            \"name\": \"test eko\",\n            \"role\": \"librarian\",\n            \"is_active\": true\n        },\n        {\n            \"username\": \"user_librarian_hq\",\n            \"name\": \"hq user\",\n            \"role\": \"librarian\",\n            \"is_active\": true\n        }\n    ]\n}"
+						},
+						{
+							"name": "list-librarian with filter",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/user/librarians/?q=eko",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"librarians",
+										""
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "eko"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 10 Sep 2023 07:36:12 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.9.17"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept, Accept-Language, Cookie, origin"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "djdt-store-id",
+									"value": "3b83602c35bd41a5bdef32152b6180d4"
+								},
+								{
+									"key": "Server-Timing",
+									"value": "TimerPanel_utime;dur=0;desc=\"User CPU time\", TimerPanel_stime;dur=0;desc=\"System CPU time\", TimerPanel_total;dur=0;desc=\"Total CPU time\", TimerPanel_total_time;dur=194.28680000000043;desc=\"Elapsed time\", SQLPanel_sql_time;dur=18.56240000000753;desc=\"SQL 3 queries\", CachePanel_total_time;dur=0;desc=\"Cache 0 Calls\""
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "138"
+								},
+								{
+									"key": "Content-Language",
+									"value": "en"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"username\": \"user_librarian123\",\n            \"name\": \"test eko\",\n            \"role\": \"librarian\",\n            \"is_active\": true\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
